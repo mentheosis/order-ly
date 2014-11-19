@@ -1,5 +1,5 @@
 // app/routes.js
-
+var path = require('path')
 var Shipment = require('./models/shipment');
 
 module.exports = function(app, passport) {
@@ -8,7 +8,22 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', authLanding, function(req, res) {
-        res.render('../views/index.ejs'); // load the index.ejs file
+        res.sendfile('/home/kris/DanPipes/aws/order-ly/views/index.html'); // load the index.ejs file
+    });
+
+    app.get('/angular.js', authLanding, function(req, res) {
+
+        //var angularPath = __dirname+'/../bower_components/angular/angular.js'
+        res.sendfile('/home/kris/DanPipes/aws/order-ly/bower_components/angular/angular.js'); // load the index.ejs file
+        //res.send(angularPath);
+    });
+
+    app.get('/controller.js', authLanding, function(req, res) {
+        res.sendfile('/home/kris/DanPipes/aws/order-ly/app/controller.js'); // load the index.ejs file
+    });
+
+    app.get('/angoose-client.js', authLanding, function(req, res) {
+        res.sendfile('/home/kris/DanPipes/aws/order-ly/angoose-client-generated.js'); // load the index.ejs file
     });
 
     // =====================================
@@ -84,7 +99,7 @@ module.exports = function(app, passport) {
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on 
+    // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();
 
@@ -101,6 +116,3 @@ function authLanding(req, res, next) {
 
     return next();
 }
-
-
-
