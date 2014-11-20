@@ -1,0 +1,36 @@
+<!-- views/index.html -->
+<!doctype html>
+<html ng-app="orderlyApp">
+<head>
+    <title>order.ly</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src = "angular.js"></script>
+    <script src = "angoose-client.js"></script>
+    <script src = "controller.js"></script>
+
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body ng-controller="orderlyCtrl">
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1>order.ly</h1>
+
+        <p>order matters - test 1 (html version) </p>
+
+        <ul>
+          <li ng-repeat="item in shipments">
+            <span>{{item}}</span>
+          </li>
+        </ul>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+    </div>
+
+</div>
+</body>
+</html>
