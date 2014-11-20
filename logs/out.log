@@ -1,0 +1,5 @@
+[32m[2014-11-20 04:32:36.737] [INFO] angoose - [39mAngoose Initialization Start
+[32m[2014-11-20 04:32:36.770] [INFO] angoose - [39mRegistered  Extension MongooseExtension
+[32m[2014-11-20 04:32:36.782] [INFO] angoose - [39mGenerated  angoose client file:  /home/ec2-user/servers/order-ly/angoose-client-generated.js
+[32m[2014-11-20 04:32:36.782] [INFO] angoose - [39mAngoose Initialization Complete
+The magic happens on port 4000
