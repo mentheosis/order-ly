@@ -1,3 +1,2 @@
 #!/bin/bash
-
-forever start -l ./logs/forever.log -o ./logs/out.log -e ./logs/err.log server.js
+forever start -l /home/ec2-user/servers/order-ly/forever.log -o ./logs/out.log -e ./logs/err.log server.js
