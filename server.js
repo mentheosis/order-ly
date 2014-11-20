@@ -4,7 +4,7 @@
 // get all the tools we need
 var express  = require('express');
 var app      = express();
-var port     = process.env.PORT || 3000;
+var port     = process.env.PORT || 4000;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -39,7 +39,7 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 /** Angoose bootstraping */
 require("angoose").init(app, {
-   'module-dirs':'/home/kris/DanPipes/aws/order-ly/app/models',
+   'module-dirs':'./app/models',
    'mongo-opts': configDB.url,
 });
 

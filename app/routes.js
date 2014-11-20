@@ -8,22 +8,22 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', authLanding, function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/views/index.html'); // load the index.ejs file
+	res.sendfile(path.resolve(__dirname,'../views/index.html')); // load the index.ejs file
     });
 
     app.get('/angular.js', authLanding, function(req, res) {
 
         //var angularPath = __dirname+'/../bower_components/angular/angular.js'
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/bower_components/angular/angular.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../bower_components/angular/angular.js')); // load the index.ejs file
         //res.send(angularPath);
     });
 
     app.get('/controller.js', authLanding, function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/app/controller.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../app/controller.js')); // load the index.ejs file
     });
 
     app.get('/angoose-client.js', authLanding, function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/angoose-client-generated.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../angoose-client-generated.js')); // load the index.ejs file
     });
 
     // =====================================
