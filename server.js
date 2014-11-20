@@ -39,7 +39,7 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 /** Angoose bootstraping */
 require("angoose").init(app, {
-   'module-dirs':'/home/kris/DanPipes/aws/order-ly/app/models',
+   'module-dirs':'./app/models',
    'mongo-opts': configDB.url,
 });
 

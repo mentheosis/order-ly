@@ -17,13 +17,14 @@
 <div class="container">
 
     <div class="jumbotron text-center">
-        <h1>order.ly</h1>
+        <h1>order.ly</h1><h2>testtest</h2>
 
         <p>order matters - test 1 (html version) </p>
 
         <ul>
           <li ng-repeat="item in shipments">
-            <span>{{item}}</span>
+            <span>Item: {{item.status}}</span>
+            <span>Desc: {{item.data.desc}}</span>
           </li>
         </ul>
 
