@@ -2,11 +2,15 @@
   "name": "order-ly",
   "version": "0.0.0",
   "homepage": "https://github.com/mentheosis/order-ly",
-  "authors": [
-    "Kris <mentheosis@gmail.com>"
-  ],
+  "main": "server.js",
   "moduleType": [
     "node"
+  ],
+  "keywords": [
+    "test"
+  ],
+  "authors": [
+    "kris and dan"
   ],
   "license": "MIT",
   "private": true,
