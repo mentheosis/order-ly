@@ -8,22 +8,50 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/views/index.html'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../views/index.html')); // load the index.ejs file
+    });
+
+    app.get('/app.css', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../views/css/app.css')); // load the index.ejs file
+    });
+
+    app.get('/task-list.html', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../views/task-list.html')); // load the index.ejs file
+    });
+
+    app.get('/create-task.html', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../views/create-task.html')); // load the index.ejs file
+    });
+
+    app.get('/login.html', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../views/login.html')); // load the index.ejs file
+    });
+
+    app.get('/signup.html', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../views/signup.html')); // load the index.ejs file
     });
 
     app.get('/angular.js', function(req, res) {
 
         //var angularPath = __dirname+'/../bower_components/angular/angular.js'
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/bower_components/angular/angular.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../bower_components/angular/angular.js')); // load the index.ejs file
         //res.send(angularPath);
     });
 
+    app.get('/app.js', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../app/app.js')); // load the index.ejs file
+    });
+
     app.get('/controller.js', function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/app/controller.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../app/controller.js')); // load the index.ejs file
     });
 
     app.get('/angoose-client.js', function(req, res) {
-        res.sendfile('/home/kris/DanPipes/aws/order-ly/angoose-client-generated.js'); // load the index.ejs file
+        res.sendfile(path.resolve(__dirname,'../angoose-client-generated.js')); // load the index.ejs file
+    });
+
+    app.get('/angular-route.js', function(req, res) {
+        res.sendfile(path.resolve(__dirname,'../bower_components/angular-route/angular-route.js')); // load the index.ejs file
     });
 
     // =====================================
@@ -38,7 +66,7 @@ module.exports = function(app, passport) {
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/ship',
+        successRedirect : '/',
         failureRedirect : '/login',
         failureFlash : true
     }));
@@ -55,7 +83,7 @@ module.exports = function(app, passport) {
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/ship', // redirect to the secure profile section
+        successRedirect : '/', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));

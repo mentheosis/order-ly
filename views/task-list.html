@@ -1,0 +1,23 @@
+
+  <h1><span class="fa fa-check-square-o"></span>Task List</h1>
+
+  Search: <input ng-model="query">
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="priority">Priority</option>
+    <option value="name">Name</option>
+  </select>
+
+  <ul style = "list-style:none">
+    <li class="taskitem" ng-repeat="item in tasks | filter:query | orderBy:orderProp">
+      <!-->
+      <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+      <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+      </-->
+      <span>Name: {{item.name}}</span>
+      <span>Priority: {{item.priority}}</span>
+      <span>Client: {{item.client}}</span>
+      <span>Status: {{item.status}}</span>
+      <br><span>Desc: {{item.desc}}</span>
+    </li>
+  </ul>

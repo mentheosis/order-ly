@@ -5,32 +5,36 @@
     <title>order.ly</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" href="app.css">
     <script src = "angular.js"></script>
     <script src = "angoose-client.js"></script>
+    <script src = "angular-route.js"></script>
+    <script src = "app.js"></script>
     <script src = "controller.js"></script>
 
     <style>
-        body        { padding-top:80px; }
+        body { padding-top:40px; }
     </style>
 </head>
-<body ng-controller="orderlyCtrl">
+<body>
 <div class="container">
 
-    <div class="jumbotron text-center">
-        <h1>order.ly</h1><h2>testtest</h2>
+    <div class="col-md-4">
+        <h1>order.ly</h1>
+        <p>order matters - test 2 (html version) </p>
 
-        <p>order matters - test 1 (html version) </p>
+      <ul style = "list-style:none">
+        <li><a href="/#/home" class="btn btn-default"><span class="fa fa-check-square-o"></span> Task List</a></li>
+        <li><a href="/#/create-task" class="btn btn-default"><span class="fa fa-edit"></span> Create Task</a></li>
+        <li><a href="/#/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a></li>
+        <li><a href="/#/login" class="btn btn-default"><span class="fa fa-sign-in"></span> Login</a></li>
+      </ul>
 
-        <ul>
-          <li ng-repeat="item in shipments">
-            <span>Item: {{item.status}}</span>
-            <span>Desc: {{item.data.desc}}</span>
-          </li>
-        </ul>
-
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
     </div>
+
+    <div class="col-md-8">
+      <div ng-view></div>
+    <div>
 
 </div>
 </body>
